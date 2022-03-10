@@ -1,0 +1,5 @@
+- create venv = virtualenv env 
+- activate env = env\scripts\activate.bat
+- pip install django
+- create rest_api folder app = django-admin startproject rest_api
+- freeze packages = pip freeze > requirements.txt    
