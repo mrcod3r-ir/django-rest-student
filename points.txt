@@ -1,5 +1,28 @@
 - create venv = virtualenv env 
+
 - activate env = env\scripts\activate.bat
+
 - pip install django
+
 - create rest_api folder app = django-admin startproject rest_api
+
 - freeze packages = pip freeze > requirements.txt    
+
+- create myapp in restapi :
+  - cd rest_api
+  - py manage.py startapp myapp
+  - add myapp in INSTALLED_APPS at settings.py from rest_api folder
+
+- create model :
+  - in models.py form myapp folder : create Student class 
+  - in admin.py from myapp folder : register student model : admin.site.register(Student)
+
+- migrate app :
+  - cd rest_api : py manage.py makemigrations
+  - cd rest_api : py manage.py migrate
+
+- runserver : in rest_api folder : py manage.py runserver
+- admin login by domain.com/admin
+
+- create an admin user :
+  - in rest_api folder : py manage.py createsuperuser  [user:admin,pass:@dm!n123]
