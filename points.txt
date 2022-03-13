@@ -26,3 +26,7 @@
 
 - create an admin user :
   - in rest_api folder : py manage.py createsuperuser  [user:admin,pass:@dm!n123]
+
+- install rest api :
+  - cd rest_api folder : pip install djangorestframework
+  - add 'rest_framework' in installed app at settings.py
