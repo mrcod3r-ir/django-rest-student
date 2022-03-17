@@ -22,3 +22,22 @@ def student_Details(request,pk):
   student=Student.objects.get(id=pk)
   student_serialize=StudentSerializer(student,many=False)
   return Response(student_serialize.data)
+
+# create student
+@api_view(['POST'])
+def student_Save(request):
+  student=StudentSerializer(data=request.data)
+  if student.is_valid():
+    student.save()
+      
+  return Response(student.data)
+
+# student update
+@api_view(['POST'])
+def student_Update(request,pk):
+  instance=Student.objects.get(id=pk)
+  student=StudentSerializer(instance=instance,data=request.data)
+  if student.is_valid():
+    student.save()
+      
+  return Response(student.data)
