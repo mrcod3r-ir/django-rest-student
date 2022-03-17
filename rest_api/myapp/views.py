@@ -15,3 +15,10 @@ def student_List(request):
   students=Student.objects.all()
   students_serialize=StudentSerializer(students,many=True)
   return Response(students_serialize.data)
+
+# show student detail
+@api_view(['GET'])
+def student_Details(request,pk):
+  student=Student.objects.get(id=pk)
+  student_serialize=StudentSerializer(student,many=False)
+  return Response(student_serialize.data)
