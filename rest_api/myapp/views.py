@@ -4,6 +4,7 @@ response for response
 Student for model
 serializers for serialize info
 """
+from gettext import install
 from rest_framework.decorators import api_view 
 from rest_framework.response import Response 
 from .models import Student
@@ -41,3 +42,12 @@ def student_Update(request,pk):
     student.save()
       
   return Response(student.data)
+
+
+# student delete
+@api_view(['DELETE'])
+def student_Delete(request,pk):
+  instance=Student.objects.get(id=pk)
+  instance.delete()
+  
+  return Response(f"student {pk} deleted")
