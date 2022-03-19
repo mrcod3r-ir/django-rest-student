@@ -30,3 +30,15 @@
 - install rest api :
   - cd rest_api folder : pip install djangorestframework
   - add 'rest_framework' in installed app at settings.py
+
+
+- install myapp
+  - py manage.py startapp myapp
+  ...
+
+
+- use api in another app 
+  - py manage.py startapp testapp 
+  - pip install requests  : for use api
+
+  ...
